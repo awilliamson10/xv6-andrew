@@ -173,6 +173,8 @@ UPROGS=\
 	_ln\
 	_ls\
 	_mkdir\
+	_pal\
+	_clear\
 	_primes\
 	_rm\
 	_sh\
