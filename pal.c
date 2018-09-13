@@ -17,6 +17,9 @@ int main(int argc, char *argv[])
   int len = strlen(argv[1]);
   char *a = malloc(len+1);
   strcpy(a, argv[1]);
+	
+
+
   int h = len-1, l = 0, m = (len+1)/2; 
   while(l < h) {
     if(a[l] != a[h]){
