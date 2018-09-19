@@ -175,6 +175,7 @@ UPROGS=\
 	_ls\
 	_mkdir\
 	_pal\
+	_free\
 	_clear\
 	_primes\
 	_memory\
@@ -256,7 +257,7 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 
 # ISU-f2018 - added some source files - primes.c, memory.c, add.c, fault.c, mem_huge.c, my_usage.c
 EXTRA=\
-	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
+	mkfs.c free.c ulib.c pal.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c\
 	primes.c memory.c add.c fault.c mem_huge.c my_usage.c\
 	rm.c stressfs.c usertests.c wc.c zombie.c\

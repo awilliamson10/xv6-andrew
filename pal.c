@@ -2,8 +2,7 @@
  * Author: Andrew Williamson
  * Date: 9/13/18
  *
- * Description: Develop a program that accepts a string as a command line argument and determines whether the string is a palindrome
- * 		duplicated. Works as intended within XV6.
+ * Description: Develop a program that accepts a string as a command line argument and determines whether the string is a palindro			me duplicated. Works as intended within XV6.
  *
  * */
 
@@ -39,8 +38,8 @@ int main(int argc, char *argv[])
     m++;
   }
   //print statements for outcome of the program
-  if(pflag==0) printf(2,"palindrome.\n"); 
-  if(dflag==0) printf(2,"repeated.\n");
+  if(pflag==0) printf(1,"palindrome.\n"); 
+  if(dflag==0) printf(1,"repeated.\n");
   if(pflag==1 && dflag==1) printf(2,"false.\n"); 
   exit();
 }

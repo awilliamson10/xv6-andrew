@@ -12,6 +12,12 @@
 #include "fs.h"
 #include "file.h"
 
+struct {
+  struct spinlock lock;
+  struct proc proc[NPROC];
+} ptable;
+
+
 int
 sys_fork(void)
 {
@@ -153,4 +159,23 @@ sys_usage(void)
   }
   
   return 0;
+}
+
+int
+sys_load(void)
+{
+	struct proc *p;
+	struct system_info *u;
+	if(argptr(0, (char **) &u, sizeof(struct system_info)) < 0)
+		return -1;
+
+	acquire(&ptable.lock);
+
+	for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+		if(p->state != UNUSED){
+			u->num_procs++;
+			u->uvm_used += myproc()->sz;
+		}
+	release(&ptable.lock);
+	return 0;
 }
